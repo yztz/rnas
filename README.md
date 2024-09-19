@@ -32,32 +32,31 @@ First, you need create a profile like this:
 
 ```json
 {
-    "name": "default",
-    "stripeDepth": 2097152,
-    "minDepth": 262144,
-    "K": 2,
-    "M": 1,
-    "tolerance": 1,
-    "servers": [
-        {
-            "type": "local",
-            "path": "path/to/localdata1",
-            "id": "localdata-1"
-        },
-        {
-            "type": "local",
-            "path": "path/to/localdata2",
-            "id": "localdata-2"
-
-        },
-        {
-            "type": "webdav",
-            "path": "web/dav/url",
-            "username": "xxx",
-            "password": "xxx",
-            "id": "xxx-cloud"
-        },
-    ]
+    "name": "default",
+    "stripeDepth": 2097152,
+    "minDepth": 262144,
+    "K": 2,
+    "M": 1,
+    "tolerance": 1,
+    "servers": [
+        {
+            "type": "local",
+            "path": "path/to/localdata1",
+            "id": "localdata-1"
+        },
+        {
+            "type": "local",
+            "path": "path/to/localdata2",
+            "id": "localdata-2"
+        },
+        {
+            "type": "webdav",
+            "path": "web/dav/url",
+            "username": "xxx",
+            "password": "xxx",
+            "id": "xxx-cloud"
+        },
+    ]
 }
 ```
   
