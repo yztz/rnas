@@ -97,8 +97,8 @@ func (server *Server) TestSpeed() error {
 
 
 func (server *Server) PutShard(shard *Shard, data []byte) error {
-	server.mu.Lock()
-	defer server.mu.Unlock()
+	// server.mu.Lock()
+	// defer server.mu.Unlock()
 
 	prefix := filepath.Join(server.config.Name, strconv.Itoa(shard.fileID))
 	shardName := fmt.Sprintf("%s.%s", shard.shardHashname, fakeSuffix)
@@ -119,8 +119,8 @@ func (server *Server) PutShard(shard *Shard, data []byte) error {
 }
 
 func (server *Server) GetShard(shard *Shard, data []byte) (int, error) {
-	server.mu.Lock()
-	defer server.mu.Unlock()
+	// server.mu.Lock()
+	// defer server.mu.Unlock()
 
 	prefix := filepath.Join(server.config.Name, strconv.Itoa(shard.fileID))
 	shardName := fmt.Sprintf("%s.%s", shard.shardHashname, fakeSuffix)
@@ -139,8 +139,8 @@ func (server *Server) GetShard(shard *Shard, data []byte) (int, error) {
 
 
 func (server *Server) GetShardStream(shard *Shard, offset int64, length int64) (io.ReadCloser, error) {
-	server.mu.Lock()
-	defer server.mu.Unlock()
+	// server.mu.Lock()
+	// defer server.mu.Unlock()
 
 	prefix := filepath.Join(server.config.Name, strconv.Itoa(shard.fileID))
 	shardName := fmt.Sprintf("%s.%s", shard.shardHashname, fakeSuffix)

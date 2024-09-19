@@ -17,10 +17,15 @@ type LocalDriver struct {
 
 // Init initializes the local storage driver by checking the path exists
 func (d *LocalDriver) Init(s *StorageConfig) error {
-	if _, err := os.Stat(s.Path); os.IsNotExist(err) {
-		return fmt.Errorf("local path does not exist: %s", s.Path)
-	}
 	d.basePath = s.Path
+	if _, err := os.Stat(s.Path); os.IsNotExist(err) {
+		// return fmt.Errorf("local path does not exist: %s", s.Path)
+		err := d.Mkdir("/")
+		if err != nil {
+			return fmt.Errorf("error when creating local storage: %s", s.Path)
+		}
+	}
+	
 	return nil
 }
 
